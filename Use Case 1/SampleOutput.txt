@@ -1,0 +1,393 @@
+# ------------------------------------
+#         Terraform Init
+# ------------------------------------
+
+
+Command : terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding hashicorp/aws versions matching "~> 3.0"...
+- Installing hashicorp/aws v3.75.1...
+- Installed hashicorp/aws v3.75.1 (signed by HashiCorp)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
+
+# ------------------------------------
+#         Terraform Plan
+# ------------------------------------
+
+
+Command : terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
+following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_db_instance.default will be created
+  + resource "aws_db_instance" "default" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 10
+      + apply_immediately                     = (known after apply)
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = (known after apply)
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + db_subnet_group_name                  = (known after apply)
+      + delete_automated_backups              = true
+      + endpoint                              = (known after apply)
+      + engine                                = "mysql"
+      + engine_version                        = "8.0.20"
+      + engine_version_actual                 = (known after apply)
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = (known after apply)
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t2.micro"
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = false
+      + name                                  = "DB"
+      + nchar_character_set_name              = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = (known after apply)
+      + password                              = (sensitive value)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = true
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_type                          = (known after apply)
+      + tags_all                              = (known after apply)
+      + timezone                              = (known after apply)
+      + username                              = "dbuser"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+  # aws_db_subnet_group.default will be created
+  + resource "aws_db_subnet_group" "default" {
+      + arn         = (known after apply)
+      + description = "Managed by Terraform"
+      + id          = (known after apply)
+      + name        = "main"
+      + name_prefix = (known after apply)
+      + subnet_ids  = (known after apply)
+      + tags        = {
+          + "Name" = "DB subnet group"
+        }
+      + tags_all    = {
+          + "Name" = "DB subnet group"
+        }
+    }
+
+  # aws_instance.webserver1 will be created
+  + resource "aws_instance" "webserver1" {
+      + ami                                  = "ami-XXXXXX"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = "us-east-1a"
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "Web Server 1"
+        }
+      + tags_all                             = {
+          + "Name" = "Web Server 1"
+        }
+      + tenancy                              = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification {
+          + capacity_reservation_preference = (known after apply)
+
+          + capacity_reservation_target {
+              + capacity_reservation_id = (known after apply)
+            }
+        }
+
+      |
+      |
+      |
+      |
+      |
+      |
+      |
+      |
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "172.0.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_classiclink                   = (known after apply)
+      + enable_classiclink_dns_support       = (known after apply)
+      + enable_dns_hostnames                 = (known after apply)
+      + enable_dns_support                   = true
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "Name" = "Demo VPC"
+        }
+      + tags_all                             = {
+          + "Name" = "Demo VPC"
+        }
+    }
+
+Plan: 22 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + lb_dns_name = (known after apply)
+
+
+
+# ------------------------------------
+#         Terraform Apply
+# ------------------------------------
+
+
+Command : terraform apply
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_db_instance.default will be created
+  + resource "aws_db_instance" "default" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 10
+      + apply_immediately                     = (known after apply)
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = (known after apply)
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + db_subnet_group_name                  = (known after apply)
+      + delete_automated_backups              = true
+      + endpoint                              = (known after apply)
+      + engine                                = "mysql"
+      + engine_version                        = "8.0.20"
+      + engine_version_actual                 = (known after apply)
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = (known after apply)
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t2.micro"
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = false
+      + name                                  = "DB"
+      + nchar_character_set_name              = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = (known after apply)
+      + password                              = (sensitive value)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = true
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_type                          = (known after apply)
+      + tags_all                              = (known after apply)
+      + timezone                              = (known after apply)
+      + username                              = "dbuser"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+      |
+      |
+      |
+      |
+      |
+      |
+      |
+      |
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "172.0.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_classiclink                   = (known after apply)
+      + enable_classiclink_dns_support       = (known after apply)
+      + enable_dns_hostnames                 = (known after apply)
+      + enable_dns_support                   = true
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "Name" = "Demo VPC"
+        }
+      + tags_all                             = {
+          + "Name" = "Demo VPC"
+        }
+    }
+
+Plan: 22 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + lb_dns_name = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_vpc.vpc: Creating...
+aws_vpc.vpc: Still creating... [10s elapsed]
+aws_vpc.vpc: Creation complete after 11s [id=vpc-xxxxxxxx]
+aws_internet_gateway.igw: Creating...
+aws_subnet.database-subnet-1: Creating...
+aws_subnet.database-subnet-2: Creating...
+      |
+      |
+      |
+      |
+      |
+      |
+      |
+aws_db_instance.default: Still creating... [4m40s elapsed]
+aws_db_instance.default: Creation complete after 4m43s [id=terraform-xxxxxxxxx]
+
+Apply complete! Resources: 22 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+lb_dns_name = "External-LB-xxxxxxx.us-east-1.elb.amazonaws.com"
+
+
+
+
+# ------------------------------------
+#         Terraform Destroy
+# ------------------------------------
+
+
+Command : terraform destroy
+
+aws_vpc.vpc: Refreshing state... [id=vpc-xxxxxxxx]
+aws_internet_gateway.igw: Refreshing state... [id=igw-xxxxxxxx]
+aws_subnet.web-subnet-1: Refreshing state... [id=subnet-xxxxxxxx]
+
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_db_instance.default will be destroyed
+  - resource "aws_db_instance" "default" {
+      |
+      |
+      |
+      |
+      |
+      |
+      |
+Plan: 0 to add, 0 to change, 22 to destroy.
+
+Changes to Outputs:
+  - lb_dns_name = "External-LB-xxxxxxx.us-east-1.elb.amazonaws.com" -> null
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+aws_route_table_association.a: Destroying... [id=xxxxxxx]
+      |
+      |
+      |
+      |
+      |
+      |
+      |
+aws_vpc.vpc: Destruction complete after 2s
+
+Destroy complete! Resources: 22 destroyed.
+
+
