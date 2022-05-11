@@ -1,0 +1,24 @@
+# -----------------------------
+#     1. Execution Test Case
+# -----------------------------
+
+PS Desktop> $InputString = '{"a":{"b":{"c":"d"}}}'
+
+PS Desktop> $Key = 'a/b/c'
+
+PS Desktop> .\KeyValueFunction.ps1
+The associated value(s) for key a/b/c is : "d"
+
+
+# -----------------------------
+#     2. Execution Test Case
+# -----------------------------
+
+PS Desktop> $InputString = '{"x":{"y":{"z":"a"}}}'
+
+PS Desktop> $Key = 'x/y'
+
+PS Desktop> .\KeyValueFunction.ps1
+The associated value(s) for key x/y is : {
+    "z":  "a"
+}
