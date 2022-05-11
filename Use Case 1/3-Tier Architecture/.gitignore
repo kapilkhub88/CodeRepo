@@ -1,0 +1,14 @@
+# ---------------------------------------------
+#         Terraform Files for Git Ignore
+# ---------------------------------------------
+
+# Local Terraform Directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+*.terraform.*
+
+# .tfvars file
+*.tfvars
